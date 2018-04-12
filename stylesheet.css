@@ -1,0 +1,30 @@
+#main {
+	width:350px;
+	margin: auto;
+	font-size:20px;
+}
+
+.text {
+	margin:10px;
+}
+
+#left {
+	float:left;
+	width: 30%;
+}
+
+#two {
+	clear:both;
+	margin:auto;
+	text-align:center;
+}
+
+#right {
+	float:left;
+	width: 70%;
+}
+
+input[type=text] {
+    margin:9px;
+}
+
