@@ -9,8 +9,13 @@
 			$servername = "localhost";
 			$username = "root";
 			$password = "root";
-			$dbname = "my_database";
-			$name = $_POST['username'];
+			$dbname = "Library";
+
+			 $customerid = $_POST['customerid'];
+			 $firstname  = $_POST['firstname'];
+			 $lastname = $_POST['lastname'];
+			 $email  = $_POST['email'];
+			
 
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,18 +25,19 @@
 			    die("Connection failed: " . $conn->connect_error);
 			} 
 
-			echo "Record added<br>";
-			echo "Name: <strong>" . $name . "</strong><br><br>";
 
 			// SQL statement
-			$sql = "INSERT INTO data (name)
-			VALUES ('" . $name . "')";
+			$sql = "INSERT INTO customer (Customer_ID,First_Name,Last_Name,Email)
+			VALUES ('" . $customerid . "', '" . $firstname . "','" . $lastname . "','" . $email . "')";
+
+			echo "Record added<br>";
+
 
 			if ($conn->query($sql) !== TRUE) {
 	    		echo "Error: " . $sql . "<br>" . $conn->error;
 			}
 		
-			echo "<a href='http://localhost:8888/project3330/'>Back</a>";
+			echo "<a href='http://localhost:8888/librarydatabase/'>Back</a>";
 
 			$conn->close();			
 		?>
