@@ -27,6 +27,7 @@
 			} 
 
 			//Date
+			date_default_timezone_set('America/Chicago');
 			$today = date("F j, Y, g:ia T"); 
 
 			// SQL statement
