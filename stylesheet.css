@@ -1,0 +1,30 @@
+
+body {
+    /*background-image: url("http://backgroundcheckall.com/wp-content/uploads/2017/12/clean-background-2.jpg");*/
+   /*background-image: url("http://www.intrawallpaper.com/static/images/518164-backgrounds.jpg");*/
+    background-repeat: no-repeat;
+	background-size: auto;
+	background-position: left top; 
+}
+
+#main{
+    
+}
+
+#info{
+	    align-items: center;
+    	display: flex;
+	    margin: auto;
+
+}
+
+fieldset{
+	padding: 3em;
+	margin-top: 5em;
+	margin-left: 10em;
+	margin-right: 10em;
+	border-radius: 20px;
+	border: 1px groove;
+	background: rgba(185, 185, 185, 0.5)
+
+}

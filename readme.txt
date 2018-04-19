@@ -26,3 +26,8 @@
 4.
 	Start servers
 	Type in browser localhost:8888/project3330/ or localhost:8888/project3330/index.html
+
+
+ADDITION:
+
+- Please import the 'bookstore.sql' file into phpMyAdmin as a new database named 'Library'. 
