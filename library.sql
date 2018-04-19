@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 25, 2018 at 11:01 PM
+-- Generation Time: Apr 19, 2018 at 06:09 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bookstore`
+-- Database: `library`
 --
 
 -- --------------------------------------------------------
@@ -222,7 +222,7 @@ CREATE TABLE `item_types` (
 
 CREATE TABLE `order_entries` (
   `Order_Entry_ID` int(20) NOT NULL,
-  `Order_Date` date NOT NULL,
+  `Order_Date` varchar(30) NOT NULL,
   `Item_ID` int(13) NOT NULL,
   `Hist_Price` double NOT NULL,
   `Discount_ID` int(10) NOT NULL,

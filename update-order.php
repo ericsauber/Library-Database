@@ -26,10 +26,12 @@
 			    die("Connection failed: " . $conn->connect_error);
 			} 
 
+			//Date
+			$today = date("F j, Y, g:ia T"); 
 
 			// SQL statement
-			$sql = "INSERT INTO order_entries (Order_Entry_ID,Item_ID,Customer_ID,Payment_ID)
-			VALUES ('" . $orderid . "', '" . $itemid . "','" . $customerid . "','" . $paymentid . "')";
+			$sql = "INSERT INTO order_entries (Order_Entry_ID,Item_ID,Customer_ID,Payment_ID, Order_Date)
+			VALUES ('" . $orderid . "', '" . $itemid . "','" . $customerid . "','" . $paymentid . "', '". $today ."')";
 
 			echo "Order added<br>";
 

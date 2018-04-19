@@ -21,13 +21,13 @@
 			} 
 
 			// SQL statement
-			$sql = "SELECT Order_Entry_ID,Item_ID,Customer_ID,Payment_ID FROM order_entries";
+			$sql = "SELECT Order_Entry_ID,Order_Date,Item_ID,Customer_ID,Payment_ID FROM order_entries";
 			$result = $conn->query($sql);
 
 			// output data of each row
 			if ($result->num_rows > 0) {
 	    		while($row = $result->fetch_assoc()) {
-	        		echo "Order_Entry_ID: " . $row["Order_Entry_ID"]. ", Item_ID: " . $row["Item_ID"] . ", Customer_ID: " . $row["Customer_ID"] . " , Payment_ID: " . $row["Payment_ID"] . "<br>";
+	        		echo "Order ID: " . $row["Order_Entry_ID"]. ", Date Ordered: " . $row["Order_Date"]. ", Item ID: " . $row["Item_ID"] . ", Customer ID: " . $row["Customer_ID"] . " , Payment ID: " . $row["Payment_ID"] . "<br>";
 	    		}
 			} else {
 	   			 echo "0 results";
