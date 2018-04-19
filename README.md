@@ -1,1 +1,1 @@
-
+Please import the 'bookstore.sql' file into phpMyAdmin as a new database named 'Library'. 

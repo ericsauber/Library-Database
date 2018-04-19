@@ -11,10 +11,10 @@
 			$password = "root";
 			$dbname = "Library";
 
+			 $orderid = $_POST['orderid'];
+			 $itemid = $_POST['itemid'];
 			 $customerid = $_POST['customerid'];
-			 $firstname  = $_POST['firstname'];
-			 $lastname = $_POST['lastname'];
-			 $email  = $_POST['email'];
+			 $paymentid = $_POST['paymentid'];
 			 
 			
 
@@ -28,10 +28,10 @@
 
 
 			// SQL statement
-			$sql = "INSERT INTO customer (Customer_ID,First_Name,Last_Name,Email)
-			VALUES ('" . $customerid . "', '" . $firstname . "','" . $lastname . "','" . $email . "')";
+			$sql = "INSERT INTO order_entries (Order_Entry_ID,Item_ID,Customer_ID,Payment_ID)
+			VALUES ('" . $orderid . "', '" . $itemid . "','" . $customerid . "','" . $paymentid . "')";
 
-			echo "Record added<br>";
+			echo "Order added<br>";
 
 
 			if ($conn->query($sql) !== TRUE) {
