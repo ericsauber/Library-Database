@@ -5,6 +5,7 @@
 	</head>
 	
 	<body>
+		 <h1 style="text-align:left">Customer List</h1>
 
 		<?php
 			$servername = "localhost";
@@ -27,7 +28,7 @@
 			// output data of each row
 			if ($result->num_rows > 0) {
 	    		while($row = $result->fetch_assoc()) {
-	        		echo "Customer ID: " . $row["Customer_ID"]. "Name: " . $row["First_Name"] . $row["Last_Name"] . " email: " . $row["Email"] . "<br>";
+	        		echo "Customer ID: " . $row["Customer_ID"]. " -- " . "Name: " . $row["First_Name"] . " " . $row["Last_Name"] . " -- " . "email: " . $row["Email"] . "<br>";
 	    		}
 			} else {
 	   			 echo "0 results";

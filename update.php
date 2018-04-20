@@ -11,7 +11,7 @@
 			$password = "root";
 			$dbname = "Library";
 
-			 $customerid = $_POST['customerid'];
+			 //$customerid = $_POST['customerid']; //auto-incremented
 			 $firstname  = $_POST['firstname'];
 			 $lastname = $_POST['lastname'];
 			 $email  = $_POST['email'];
@@ -28,8 +28,8 @@
 
 
 			// SQL statement
-			$sql = "INSERT INTO customer (Customer_ID,First_Name,Last_Name,Email)
-			VALUES ('" . $customerid . "', '" . $firstname . "','" . $lastname . "','" . $email . "')";
+			$sql = "INSERT INTO customer (First_Name,Last_Name,Email)
+			VALUES ('" . $firstname . "','" . $lastname . "','" . $email . "')";
 
 			echo "Record added<br>";
 
