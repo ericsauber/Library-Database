@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 19, 2018 at 06:09 PM
+-- Generation Time: Apr 20, 2018 at 05:31 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -100,6 +100,32 @@ CREATE TABLE `customer` (
   `CAddress_Entity_ID` int(13) NOT NULL,
   `Phone` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`Customer_ID`, `First_Name`, `Middle_Init`, `Last_Name`, `Email`, `Username`, `Password`, `Created_Date`, `CAddress_Entity_ID`, `Phone`) VALUES
+(1, 'Johnny', '', 'Pham', 'johnny.pham2@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(2, 'Eric', '', 'Sauber', 'eric.sauber@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(3, 'Michael', '', 'Fry', 'michael.fry@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(4, 'Angelina', '', 'Jolie', 'angelina.jolie@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(5, 'Tiger', '', 'Woods', 'tiger.woods@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(6, 'Brad', '', 'Pitt', 'brad.pitt@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(7, 'Britney', '', 'Spears', 'britney.spears@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(8, 'Michael', '', 'Jordan', 'michael.jordan@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(9, 'Kobe', '', 'Bryant', 'kobe.bryant@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(10, 'Howard', '', 'Stern', 'howard.stern@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(11, 'Kevin', '', 'Hart', 'kevin.hart@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(12, 'Manny', '', 'Pacquiao', 'manny.pacquiao@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(13, 'Floyd', '', 'Mayweather', 'floyd.mayweather2@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(14, 'Elton', '', 'John', 'elton.john@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(15, 'Steven', '', 'Spielberg', 'steven.spielberg@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(16, 'Tom', '', 'Hanks', 'tom.hanks@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(17, 'Robin', '', 'Williams', 'robin.williams@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(18, 'Mark', '', 'Hamill', 'mark.hammill@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(19, 'Carrie', '', 'Fisher', 'carrie.fisher@mavs.uta.edu', '', '', '0000-00-00', 0, 0),
+(20, 'Harrison', '', 'Ford', 'harrison.ford@mavs.uta.edu', '', '', '0000-00-00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -413,7 +439,16 @@ ALTER TABLE `staff`
 --
 ALTER TABLE `store_items`
   ADD PRIMARY KEY (`Item_ID`);
-COMMIT;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `Customer_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
