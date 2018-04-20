@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 20, 2018 at 06:12 PM
+-- Generation Time: Apr 20, 2018 at 07:41 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -185,6 +185,33 @@ CREATE TABLE `items` (
   `Item_Price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`Item_ID`, `Type_No`, `Subtype_No`, `Media_No`, `Format_No`, `Subject_No`, `Item_Price`) VALUES
+('1282570117477', 3, 2, 3, 5, 110, 11),
+('1900783239800', 2, 2, 3, 5, 112, 12),
+('3037117082035', 2, 2, 3, 5, 105, 15),
+('4348477139161', 2, 2, 3, 5, 111, 20),
+('4656905162973', 2, 2, 3, 5, 109, 25),
+('6130405181145', 2, 2, 3, 5, 117, 14),
+('6244775655318', 2, 2, 3, 5, 115, 55),
+('6261168218049', 3, 3, 3, 5, 107, 65),
+('7117221369723', 3, 3, 3, 5, 114, 55),
+('7130436935832', 2, 3, 3, 5, 106, 50),
+('7437541553056', 2, 2, 3, 5, 113, 30),
+('9006211592278', 2, 2, 3, 5, 116, 40),
+('9143831716505', 2, 2, 3, 5, 108, 30),
+('9345458656592', 2, 2, 3, 5, 115, 70),
+('FE8J28TF3G', 4, 4, 2, 1, 107, 30),
+('JIE6GBU69T', 4, 4, 2, 1, 101, 40),
+('JK7GBG4NGQ', 4, 4, 2, 1, 103, 30),
+('MOZOGPIT70', 4, 4, 2, 1, 102, 30),
+('QO0P1AXUPJ', 4, 4, 2, 1, 103, 30),
+('T6XCLPS6SH', 4, 4, 2, 1, 104, 30),
+('VUZXB8TSQF', 4, 4, 2, 1, 113, 35);
+
 -- --------------------------------------------------------
 
 --
@@ -195,6 +222,17 @@ CREATE TABLE `item_formats` (
   `Format_No` enum('1','2','3','4','5') NOT NULL,
   `Format_Type` enum('BR','CD','DVD','Digital','Print') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `item_formats`
+--
+
+INSERT INTO `item_formats` (`Format_No`, `Format_Type`) VALUES
+('1', 'BR'),
+('2', 'CD'),
+('3', 'DVD'),
+('4', 'Digital'),
+('5', 'Print');
 
 -- --------------------------------------------------------
 
@@ -207,6 +245,15 @@ CREATE TABLE `item_media` (
   `Media_Type` enum('Digital','Disc','Print','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `item_media`
+--
+
+INSERT INTO `item_media` (`Media_No`, `Media_Type`) VALUES
+('1', 'Digital'),
+('2', 'Disc'),
+('3', 'Print');
+
 -- --------------------------------------------------------
 
 --
@@ -218,6 +265,29 @@ CREATE TABLE `item_subject` (
   `Subject` enum('Action/Adventure','Art','Comedy','Cooking/Recipes','Crime/Mystery','Documentary','Drama','History/Historical','Historical/Fiction','Horror/Thriller','Political/Cultural','Philosphy/Religion','Romance','ScienceFiction/Fantasy','Technical/Scientific','Travel','Western') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `item_subject`
+--
+
+INSERT INTO `item_subject` (`Subject_No`, `Subject`) VALUES
+('101', 'Action/Adventure'),
+('102', 'Art'),
+('103', 'Comedy'),
+('104', 'Cooking/Recipes'),
+('105', 'Crime/Mystery'),
+('106', 'Documentary'),
+('107', 'Drama'),
+('108', 'History/Historical'),
+('109', 'Historical/Fiction'),
+('110', 'Horror/Thriller'),
+('111', 'Political/Cultural'),
+('112', 'Philosphy/Religion'),
+('113', 'Romance'),
+('114', 'ScienceFiction/Fantasy'),
+('115', 'Technical/Scientific'),
+('116', 'Travel'),
+('117', 'Western');
+
 -- --------------------------------------------------------
 
 --
@@ -225,9 +295,21 @@ CREATE TABLE `item_subject` (
 --
 
 CREATE TABLE `item_subtypes` (
-  `Subtype_No` enum('1','2','3','4') NOT NULL,
+  `Subtype_No` enum('1','2','3','4','5','6') NOT NULL,
   `Subtype` enum('Audio','Hardcover','Paperback','Movie/Film','Television/Series','Other') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `item_subtypes`
+--
+
+INSERT INTO `item_subtypes` (`Subtype_No`, `Subtype`) VALUES
+('1', 'Audio'),
+('2', 'Hardcover'),
+('3', 'Paperback'),
+('4', 'Movie/Film'),
+('5', 'Television/Series'),
+('6', 'Other');
 
 -- --------------------------------------------------------
 
@@ -239,6 +321,16 @@ CREATE TABLE `item_types` (
   `Type_No` enum('1','2','3','4') NOT NULL,
   `Type` enum('Audio','Book','Periodical','Video') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `item_types`
+--
+
+INSERT INTO `item_types` (`Type_No`, `Type`) VALUES
+('1', 'Audio'),
+('2', 'Book'),
+('3', 'Periodical'),
+('4', 'Video');
 
 -- --------------------------------------------------------
 
@@ -287,6 +379,15 @@ CREATE TABLE `payment_types` (
   `Payment_Type` enum('Debit','Credit','Transfer','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `payment_types`
+--
+
+INSERT INTO `payment_types` (`Payment_TypeNo`, `Payment_Type`) VALUES
+('1', 'Debit'),
+('2', 'Credit'),
+('3', 'Transfer');
+
 -- --------------------------------------------------------
 
 --
@@ -297,6 +398,18 @@ CREATE TABLE `srvcr_types` (
   `Srvcr_TypeNo` enum('1','2','3','4','5','6') NOT NULL,
   `Srvcr_Type` enum('AmericanExpress','Bank','Discover','Mastercard','Other','Visa') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `srvcr_types`
+--
+
+INSERT INTO `srvcr_types` (`Srvcr_TypeNo`, `Srvcr_Type`) VALUES
+('1', 'AmericanExpress'),
+('2', 'Bank'),
+('3', 'Discover'),
+('4', 'Mastercard'),
+('5', 'Other'),
+('6', 'Visa');
 
 -- --------------------------------------------------------
 
@@ -448,12 +561,12 @@ ALTER TABLE `store_items`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Customer_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `Customer_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `order_entries`
 --
 ALTER TABLE `order_entries`
-  MODIFY `Order_Entry_ID` int(20) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `Order_Entry_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

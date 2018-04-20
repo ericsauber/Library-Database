@@ -1,21 +1,10 @@
 
+
 body {
     /*background-image: url("http://backgroundcheckall.com/wp-content/uploads/2017/12/clean-background-2.jpg");*/
-   /*background-image: url("http://www.intrawallpaper.com/static/images/518164-backgrounds.jpg");*/
     background-repeat: no-repeat;
 	background-size: auto;
 	background-position: left top; 
-}
-
-#main{
-    
-}
-
-#info{
-	    align-items: center;
-    	display: flex;
-	    margin: auto;
-
 }
 
 fieldset{
@@ -27,4 +16,21 @@ fieldset{
 	border: 1px groove;
 	background: rgba(185, 185, 185, 0.5)
 
+}
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+	border-radius:20px; 
+	 margin-bottom: 10px;  
+
+
+}
+
+a:hover, a:active {
+    background-color: red;
 }
