@@ -18,7 +18,9 @@
 			 // $lastname = $_POST['lastname'];
 			 // $email  = $_POST['email'];
 			
-			echo date('h:i:s:u a, l F jS Y e'); 
+			date_default_timezone_set('America/Chicago');
+			date("Current date and time: F j, Y, g:ia T"); 
+
 
 
 			// Create connection
@@ -27,18 +29,25 @@
 			// Check connection
 			if ($conn->connect_error) {
 			    die("Connection failed: " . $conn->connect_error);
-			} 
+			} else{
+			//	echo "connection success!!!";
+			}
 
 
-			// SQL statement -- NOT WORKING 
+			// SQL statement -Add inital data- NOT WORKING 
 		
-			// $sql = "INSERT INTO customer ( Customer_ID,First_Name,Last_Name,Email) VALUES ("9","Johnny", "Pham","jpham@gmail.com")";
+			 $sql = "INSERT INTO customer(First_Name,Last_Name,Email) VALUES('Johnny', 'Pham','johnny.pham2@mavs.uta.edu')";
+			  $sql = "INSERT INTO customer(First_Name,Last_Name,Email) VALUES('Eric', 'Sauber','eric.sauber@mavs.uta.edu')";
+			   $sql = "INSERT INTO customer(First_Name,Last_Name,Email) VALUES('Michael', 'Fry','michael.fry@mavs.uta.edu')";
+
+
+			echo "working";
 			
 
 			echo "Record added<br>";
 
 
-			if ($conn->query($sql) !== TRUE) {
+			if ($conn->query($sql) != TRUE) {
 	    		echo "SQL Error: " . $sql . "<br>" . $conn->error;
 			}
 		

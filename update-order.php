@@ -11,7 +11,7 @@
 			$password = "root";
 			$dbname = "Library";
 
-			 $orderid = $_POST['orderid'];
+			 //$orderid = $_POST['orderid'];
 			 $itemid = $_POST['itemid'];
 			 $customerid = $_POST['customerid'];
 			 $paymentid = $_POST['paymentid'];
@@ -31,8 +31,8 @@
 			$today = date("F j, Y, g:ia T"); 
 
 			// SQL statement
-			$sql = "INSERT INTO order_entries (Order_Entry_ID,Item_ID,Customer_ID,Payment_ID, Order_Date)
-			VALUES ('" . $orderid . "', '" . $itemid . "','" . $customerid . "','" . $paymentid . "', '". $today ."')";
+			$sql = "INSERT INTO order_entries (Item_ID,Customer_ID,Payment_ID, Order_Date)
+			VALUES ('" . $itemid . "','" . $customerid . "','" . $paymentid . "', '". $today ."')";
 
 			echo "Order added<br>";
 
