@@ -3,9 +3,10 @@
 	<head>
 		<title>Show database</title>
 	</head>
-	
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<h1 style="text-align:left">Customer List</h1>
+
 	<body>
-		 <h1 style="text-align:left">Customer List</h1>
 
 		<?php
 			$servername = "localhost";

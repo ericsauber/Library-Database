@@ -2,7 +2,8 @@
 	<head>
 		<title>Database updated</title>
 	</head>
-	
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
 	<body>
 		
 		<?php

@@ -3,7 +3,9 @@
 	<head>
 		<title>Show database</title>
 	</head>
-	
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<h1 style="text-align:left">Order List</h1>
+
 	<body>
 
 		<?php

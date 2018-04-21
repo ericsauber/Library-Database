@@ -3,7 +3,8 @@
 	<head>
 		<title>Show Items</title>
 	</head>
-	
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
 	<body>
 		 <h1 style="text-align:left">Item List</h1>
 
