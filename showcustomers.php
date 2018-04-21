@@ -36,7 +36,7 @@
 			}	
 
 			echo "<br>";
-			echo "<a href='http://localhost:8888/Library-Database/'>Back</a>";
+			echo "<a style='color:black' href='http://localhost:8888/Library-Database/'>Home</a>";
 	 
 			$conn->close();
 		?>

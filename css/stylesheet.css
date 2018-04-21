@@ -1,16 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 
 .text{
 	font-family: "Helvetica", Helvetica, sans-serif;
 	font-size: 80%;
 }
 
-.main{
+#main{
      margin: auto;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
      text-align: center;
+     width:200px;
+     background-color:black;
+     opacity:0.65;
 }
 
 
@@ -29,8 +30,8 @@ body.index{
 
 h1{
 	margin-top: 1rem;
-	font-family: "Helvetica", Helvetica, sans-serif;
-	font-size: 150%;
+	font-family: "Pacifico";
+	
 }
 
 #index{
