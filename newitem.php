@@ -1,6 +1,11 @@
 <!DOCTYPE HTML>
 <html>
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/cs" href="css/stylesheet.css">
+
+    <?php
+      require './functionlib.php';
+     ?>
+  
 
     <head>
        
@@ -15,21 +20,22 @@
 
                 <div class="text">Item_ID</div>
                 <div><input type="text" name="Item_ID" size="30"/></div><br>
-
+            
                 <div class="text">Type_No</div>
-                <div><input type="text" name="Type_No" size="30"/></div><br>
+                <div><?php makelistelement('item_types','Type_No','Type',''); ?></div><br>
+
 
                 <div class="text">Subtype_No</div>
-                <div><input type="text" name="Subtype_No" size="30"/></div><br>
+                <div><?php makelistelement('item_subtypes','Subype_No','Subtype',''); ?></div><br>
 
                  <div class="text">Media_No</div>
-                <div><input type="text" name="Media_No" size="30"/></div><br>
+                <div><?php makelistelement('item_media','Media_No','Media_Type',''); ?></div><br>
 
                  <div class="text">Format_No</div>
-                <div><input type="text" name="Format_No" size="30"/></div><br>
+                <div><?php makelistelement('item_formats','Format_No','Format_Type',''); ?></div><br>
 
                  <div class="text">Subject_No</div>
-                <div><input type="text" name="Subject_No" size="30"/></div><br>
+                <div><?php makelistelement('item_subject','Subject_No','Subject',''); ?></div><br>
 
                 <div class="text">Item_Price</div>
                 <div><input type="text" name="Item_Price" size="30"/></div><br>
