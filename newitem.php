@@ -18,32 +18,32 @@
         <div class="main">
 
 
-                <div class="text">Item_ID</div>
+                <div class="text">Item ID: </div>
                 <div><input type="text" name="Item_ID" size="30"/></div><br>
             
-                <div class="text">Type_No</div>
+                <div class="text">Type: </div>
                 <div><?php makelistelement('item_types','Type_No','Type',''); ?></div><br>
 
 
-                <div class="text">Subtype_No</div>
-                <div><?php makelistelement('item_subtypes','Subype_No','Subtype',''); ?></div><br>
+                <div class="text">Subtype: </div>
+                <div><?php makelistelement('item_subtypes','Subtype_No','Subtype',''); ?></div><br>
 
-                 <div class="text">Media_No</div>
+                 <div class="text">Media </div>
                 <div><?php makelistelement('item_media','Media_No','Media_Type',''); ?></div><br>
 
-                 <div class="text">Format_No</div>
+                 <div class="text">Format: </div>
                 <div><?php makelistelement('item_formats','Format_No','Format_Type',''); ?></div><br>
 
-                 <div class="text">Subject_No</div>
+                 <div class="text">Subject: </div>
                 <div><?php makelistelement('item_subject','Subject_No','Subject',''); ?></div><br>
 
-                <div class="text">Item_Price</div>
+                <div class="text">Price: </div>
                 <div><input type="text" name="Item_Price" size="30"/></div><br>
         
         
             
 
-            <div id="two">
+            <div>
                 <input type="submit" value="Submit"/><br><br>    
             </div>
 

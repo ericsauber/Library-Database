@@ -7,11 +7,13 @@
 }
 
 #main{
-     margin: auto;
+	 margin: auto;
      text-align: center;
      width:200px;
      background-color:black;
-     opacity:0.65;
+     opacity:0.5;
+     padding: 20px 20px;
+
 }
 
 
@@ -39,17 +41,6 @@ h1{
 	font-size: 200%;
 }
 
-fieldset{
-	padding: 3em;
-	margin-top: 5em;
-	margin-left: 10em;
-	margin-right: 10em;
-	border-radius: 20px;
-	border: 1px groove;
-	background: rgba(185, 185, 185, 0.5)
-
-}
-
 a:link, a:visited {
     background-color: rgba(206,95,78);
     color: white;
@@ -59,7 +50,6 @@ a:link, a:visited {
     display: inline-block;
 	border-radius:20px; 
 	 margin-bottom: 10px;  
-	 opacity: 0.8;
 
 
 }

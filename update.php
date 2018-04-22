@@ -18,29 +18,37 @@
 			 $email  = $_POST['email'];
 			 
 			
+			 if($firstname==NULL || $lastname==NULL || $email==NULL){
+			 	echo "Fields cannot be NULL. Request failed. Please try again.<br><br>";
 
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
+			 	echo "<a style='color:black' href='http://localhost:8888/Library-Database/newcustomer.html'>Back</a>";
+			 }
 
-			// Check connection
-			if ($conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
-			} 
+			 else{
+				// Create connection
+				$conn = new mysqli($servername, $username, $password, $dbname);
 
-
-			// SQL statement
-			$sql = "INSERT INTO customer (First_Name,Last_Name,Email)
-			VALUES ('" . $firstname . "','" . $lastname . "','" . $email . "')";
-
-			echo "Record added<br>";
+				// Check connection
+				if ($conn->connect_error) {
+				    die("Connection failed: " . $conn->connect_error);
+				} 
 
 
-			if ($conn->query($sql) !== TRUE) {
-	    		echo "Error: " . $sql . "<br>" . $conn->error;
-			}
+
+				// SQL statement
+				$sql = "INSERT INTO customer (First_Name,Last_Name,Email)
+				VALUES ('" . $firstname . "','" . $lastname . "','" . $email . "')";
+
+				echo "Record added<br>";
+
+
+				if ($conn->query($sql) !== TRUE) {
+		    		echo "Error: " . $sql . "<br>" . $conn->error;
+				}
+			
 		
 			echo "<a style='color:black' href='http://localhost:8888/Library-Database/'>Home</a>";
-
+			}
 			$conn->close();			
 		?>
 		

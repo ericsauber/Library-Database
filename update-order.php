@@ -17,34 +17,41 @@
 			 $customerid = $_POST['customerid'];
 			 $paymentid = $_POST['paymentid'];
 			 
+
+			 if($itemid==NULL || $customerid==NULL){
+			 	echo "Field cannot be NULL. Request failed. Please try again.<br><br>";
+
+			 	echo "<a style='color:black' href='http://localhost:8888/Library-Database/neworder.html'>Back</a>";
+			 } 
+			 else{
+
+				// Create connection
+				$conn = new mysqli($servername, $username, $password, $dbname);
+
+				// Check connection
+				if ($conn->connect_error) {
+				    die("Connection failed: " . $conn->connect_error);
+				} 
+
+				//Date
+				date_default_timezone_set('America/Chicago');
+				$today = date("F j, Y, g:ia T"); 
+
+				// SQL statement
+				$sql = "INSERT INTO order_entries (Item_ID,Customer_ID,Payment_ID, Order_Date)
+				VALUES ('" . $itemid . "','" . $customerid . "','" . $paymentid . "', '". $today ."')";
+
+				echo "Order added<br>";
+
+
+				if ($conn->query($sql) !== TRUE) {
+		    		echo "Error: " . $sql . "<br>" . $conn->error;
+				}
 			
+				echo "<a style='color:black' href='http://localhost:8888/Library-Database/'>Home</a>";
 
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-
-			// Check connection
-			if ($conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
-			} 
-
-			//Date
-			date_default_timezone_set('America/Chicago');
-			$today = date("F j, Y, g:ia T"); 
-
-			// SQL statement
-			$sql = "INSERT INTO order_entries (Item_ID,Customer_ID,Payment_ID, Order_Date)
-			VALUES ('" . $itemid . "','" . $customerid . "','" . $paymentid . "', '". $today ."')";
-
-			echo "Order added<br>";
-
-
-			if ($conn->query($sql) !== TRUE) {
-	    		echo "Error: " . $sql . "<br>" . $conn->error;
-			}
-		
-			echo "<a style='color:black' href='http://localhost:8888/Library-Database/'>Home</a>";
-
-			$conn->close();			
+				$conn->close();		
+			}	
 		?>
 		
 	</body>
