@@ -26,14 +26,29 @@
 			$sql = "SELECT Customer_ID, First_Name, Last_Name, Email FROM customer";
 			$result = $conn->query($sql);
 
+			 echo '<table border="1" width="60%" cellspacing="0" cellpadding="3">';
+
 			// output data of each row
 			if ($result->num_rows > 0) {
+				 // Output a row
+			        echo "<tr>";
+			        echo '<td align="center"><b>CID#</b></td><td align="center"><b>First Name</b></td><td align="center"><b>Last Name</b></td><td width="50%" align="center"><b>E-mail</b></td>';
+			        echo "</tr>";
 	    		while($row = $result->fetch_assoc()) {
-	        		echo "Customer ID: " . $row["Customer_ID"]. " -- " . "Name: " . $row["First_Name"] . " " . $row["Last_Name"] . " -- " . "email: " . $row["Email"] . "<br>";
+
+	    			 // Output a row
+			        echo "<tr>";
+			        echo '<td align="center">'.$row["Customer_ID"]. '</td><td align="left">' . $row["First_Name"] . '</td><td align="left">' . $row["Last_Name"] . '</td><td width="50%" align="left">' . $row["Email"] . '</td>';
+			        echo "</tr>";
+
 	    		}
 			} else {
 	   			 echo "0 results";
 			}	
+
+			// Close the table
+    		echo "</table>";
+
 
 			echo "<br>";
 			echo "<a style='color:black' href='http://localhost:8888/Library-Database/'>Home</a>";

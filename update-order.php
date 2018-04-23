@@ -15,11 +15,11 @@
 			 //$orderid = $_POST['orderid'];
 			 $itemid = $_POST['itemid'];
 			 $customerid = $_POST['customerid'];
-			 $paymentid = $_POST['paymentid'];
+			// $paymentid = $_POST['paymentid']; 
 			 
 
-			 if($itemid==NULL || $customerid==NULL){
-			 	echo "Field cannot be NULL. Request failed. Please try again.<br><br>";
+			 if($itemid==NULL || $customerid==NULL || !is_numeric($customerid) || !ctype_alnum($itemid)){
+			 	echo "Bad input. Request failed. Please try again.<br><br>";
 
 			 	echo "<a style='color:black' href='http://localhost:8888/Library-Database/neworder.html'>Back</a>";
 			 } 
@@ -36,10 +36,11 @@
 				//Date
 				date_default_timezone_set('America/Chicago');
 				$today = date("F j, Y, g:ia T"); 
+				$payID = date("mdy-His");
 
 				// SQL statement
-				$sql = "INSERT INTO order_entries (Item_ID,Customer_ID,Payment_ID, Order_Date)
-				VALUES ('" . $itemid . "','" . $customerid . "','" . $paymentid . "', '". $today ."')";
+				$sql = "INSERT INTO order_entries (Item_ID,Customer_ID, Payment_ID, Order_Date)
+				VALUES ('" . $itemid . "','" . $customerid . "', '". $payID ."','". $today ."')";
 
 				echo "Order added<br>";
 

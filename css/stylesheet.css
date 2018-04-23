@@ -57,3 +57,10 @@ a:link, a:visited {
 a:hover, a:active {
     background-color: rgba(251,63,0);
 }
+
+
+
+td{
+     border-width:1px;  
+    border-style:groove;
+}

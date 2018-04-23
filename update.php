@@ -18,8 +18,8 @@
 			 $email  = $_POST['email'];
 			 
 			
-			 if($firstname==NULL || $lastname==NULL || $email==NULL){
-			 	echo "Fields cannot be NULL. Request failed. Please try again.<br><br>";
+			 if($firstname==NULL || $lastname==NULL || $email==NULL || !ctype_alnum($email) || !ctype_alpha($firstname) || !ctype_alpha($lastname)){
+			 	echo "Bad input. Request failed. Please try again.<br><br>";
 
 			 	echo "<a style='color:black' href='http://localhost:8888/Library-Database/newcustomer.html'>Back</a>";
 			 }

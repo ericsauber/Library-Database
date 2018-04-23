@@ -12,6 +12,7 @@
 			$password = "root";
 			$dbname = "Library";
 
+			$Item_Name = $_POST['Item_Name'];
 			$Item_ID = $_POST['Item_ID'];
 			$Type_No = $_POST['Type_No'];
 			$Subtype_No = $_POST['Subtype_No'];
@@ -20,8 +21,8 @@
 			$Subject_No = $_POST['Subject_No'];
 			$Item_Price = $_POST['Item_Price'];
 
-			if($Item_ID==NULL || $Item_Price==NULL){
-			 	echo "Field cannot be NULL. Request failed. Please try again.<br><br>";
+			if($Item_Name==NULL || $Item_ID==NULL || $Item_Price==NULL){
+			 	echo "Bad input. Request failed. Please try again.<br><br>";
 
 			 	echo "<a style='color:black' href='http://localhost:8888/Library-Database/newitem.php'>Back</a>";
 			 } 
@@ -41,8 +42,8 @@
 				$today = date("F j, Y, g:ia T"); 
 
 				// SQL statement 
-				$sql = "INSERT INTO items (Item_ID, Type_No, Subtype_No, Media_No, Format_No, Subject_No, Item_Price )
-				VALUES ('" . $Item_ID . "','" . $Type_No . "','" . $Subtype_No . "', '". $Media_No ."', '" . $Format_No . "', '" . $Subject_No . "', '" . $Item_Price . "')";
+				$sql = "INSERT INTO items (Item_Name, Item_ID, Type_No, Subtype_No, Media_No, Format_No, Subject_No, Item_Price )
+				VALUES ('" . $Item_Name . "','" . $Item_ID . "','" . $Type_No . "','" . $Subtype_No . "', '". $Media_No ."', '" . $Format_No . "', '" . $Subject_No . "', '" . $Item_Price . "')";
 
 				echo "Item added<br>";
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 20, 2018 at 07:41 PM
+-- Generation Time: Apr 23, 2018 at 01:27 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -182,35 +182,36 @@ CREATE TABLE `items` (
   `Media_No` int(2) NOT NULL,
   `Format_No` int(2) NOT NULL,
   `Subject_No` int(3) NOT NULL,
-  `Item_Price` double NOT NULL
+  `Item_Price` double NOT NULL,
+  `Item_Name` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`Item_ID`, `Type_No`, `Subtype_No`, `Media_No`, `Format_No`, `Subject_No`, `Item_Price`) VALUES
-('1282570117477', 3, 2, 3, 5, 110, 11),
-('1900783239800', 2, 2, 3, 5, 112, 12),
-('3037117082035', 2, 2, 3, 5, 105, 15),
-('4348477139161', 2, 2, 3, 5, 111, 20),
-('4656905162973', 2, 2, 3, 5, 109, 25),
-('6130405181145', 2, 2, 3, 5, 117, 14),
-('6244775655318', 2, 2, 3, 5, 115, 55),
-('6261168218049', 3, 3, 3, 5, 107, 65),
-('7117221369723', 3, 3, 3, 5, 114, 55),
-('7130436935832', 2, 3, 3, 5, 106, 50),
-('7437541553056', 2, 2, 3, 5, 113, 30),
-('9006211592278', 2, 2, 3, 5, 116, 40),
-('9143831716505', 2, 2, 3, 5, 108, 30),
-('9345458656592', 2, 2, 3, 5, 115, 70),
-('FE8J28TF3G', 4, 4, 2, 1, 107, 30),
-('JIE6GBU69T', 4, 4, 2, 1, 101, 40),
-('JK7GBG4NGQ', 4, 4, 2, 1, 103, 30),
-('MOZOGPIT70', 4, 4, 2, 1, 102, 30),
-('QO0P1AXUPJ', 4, 4, 2, 1, 103, 30),
-('T6XCLPS6SH', 4, 4, 2, 1, 104, 30),
-('VUZXB8TSQF', 4, 4, 2, 1, 113, 35);
+INSERT INTO `items` (`Item_ID`, `Type_No`, `Subtype_No`, `Media_No`, `Format_No`, `Subject_No`, `Item_Price`, `Item_Name`) VALUES
+('1282570117477', 3, 2, 3, 5, 110, 11, 'Weird Tales (April 2018)'),
+('1900783239800', 2, 2, 3, 5, 112, 12, 'Tao Te Ching, by Laozi'),
+('3037117082035', 2, 2, 3, 5, 105, 15, 'The Disappeared, by C. J. Box'),
+('4348477139161', 2, 2, 3, 5, 111, 20, 'The Communist Manifesto, by Karl Marx'),
+('4656905162973', 2, 2, 3, 5, 109, 25, 'The Diary of a Young Girl, by Anne Frank'),
+('6130405181145', 2, 2, 3, 5, 117, 14, 'Lonesome Dove, by Larry McMurtry'),
+('6244775655318', 2, 2, 3, 5, 115, 55, 'Fundamentals of Database Systems, by Elmasri and Navathe'),
+('6261168218049', 3, 3, 3, 5, 107, 65, 'Vanity Fair (April 2018)'),
+('7117221369723', 3, 3, 3, 5, 114, 55, 'The Hobbit, by J.R.R. Tolkien'),
+('7130436935832', 3, 3, 3, 5, 106, 50, 'TIME (April 2018)'),
+('7437541553056', 2, 2, 3, 5, 113, 30, 'Fifty Shades of Grey'),
+('9006211592278', 2, 2, 3, 5, 116, 40, 'Into the Wild'),
+('9143831716505', 2, 2, 3, 5, 108, 30, 'A People\'s History of the United States'),
+('9345458656592', 2, 2, 3, 5, 115, 70, 'Introduction to Algorithms'),
+('FE8J28TF3G', 4, 4, 2, 1, 107, 30, 'Schindler\'s List '),
+('JIE6GBU69T', 4, 4, 2, 1, 101, 40, 'Avengers: Infinity War'),
+('JK7GBG4NGQ', 4, 4, 2, 1, 103, 30, 'Anchorman: The Legend of Ron Burgundy'),
+('MOZOGPIT70', 4, 4, 2, 1, 102, 30, 'Frida'),
+('QO0P1AXUPJ', 4, 4, 2, 1, 103, 30, 'Caddyshack'),
+('T6XCLPS6SH', 4, 4, 2, 1, 104, 30, 'Iron Chef America'),
+('VUZXB8TSQF', 4, 4, 2, 1, 113, 35, 'Pretty Woman');
 
 -- --------------------------------------------------------
 
@@ -341,13 +342,29 @@ INSERT INTO `item_types` (`Type_No`, `Type`) VALUES
 CREATE TABLE `order_entries` (
   `Order_Entry_ID` int(20) NOT NULL,
   `Order_Date` varchar(30) NOT NULL,
-  `Item_ID` int(13) NOT NULL,
+  `Item_ID` varchar(13) NOT NULL,
   `Hist_Price` double NOT NULL,
   `Discount_ID` int(10) NOT NULL,
   `Customer_ID` int(10) NOT NULL,
-  `Payment_ID` int(11) NOT NULL,
+  `Payment_ID` varchar(20) NOT NULL,
   `Payment_Amt` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order_entries`
+--
+
+INSERT INTO `order_entries` (`Order_Entry_ID`, `Order_Date`, `Item_ID`, `Hist_Price`, `Discount_ID`, `Customer_ID`, `Payment_ID`, `Payment_Amt`) VALUES
+(1, 'April 22, 2018, 8:25pm CDT', '7437541553056', 0, 0, 11, '042218-202508', 0),
+(2, 'April 22, 2018, 8:25pm CDT', 'JIE6GBU69T', 0, 0, 18, '042218-202517', 0),
+(3, 'April 22, 2018, 8:25pm CDT', 'QO0P1AXUPJ', 0, 0, 3, '042218-202531', 0),
+(4, 'April 22, 2018, 8:25pm CDT', '6244775655318', 0, 0, 2, '042218-202538', 0),
+(5, 'April 22, 2018, 8:25pm CDT', '6261168218049', 0, 0, 7, '042218-202546', 0),
+(6, 'April 22, 2018, 8:25pm CDT', 'JK7GBG4NGQ', 0, 0, 1, '042218-202555', 0),
+(7, 'April 22, 2018, 8:26pm CDT', 'T6XCLPS6SH', 0, 0, 12, '042218-202603', 0),
+(8, 'April 22, 2018, 8:26pm CDT', '9143831716505', 0, 0, 5, '042218-202611', 0),
+(9, 'April 22, 2018, 8:26pm CDT', '7117221369723', 0, 0, 15, '042218-202621', 0),
+(10, 'April 22, 2018, 8:26pm CDT', '3037117082035', 0, 0, 8, '042218-202629', 0);
 
 -- --------------------------------------------------------
 
@@ -561,12 +578,12 @@ ALTER TABLE `store_items`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Customer_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `Customer_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `order_entries`
 --
 ALTER TABLE `order_entries`
-  MODIFY `Order_Entry_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `Order_Entry_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

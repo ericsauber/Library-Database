@@ -17,6 +17,8 @@
         <form action="http://localhost:8888/Library-Database/update-item.php" method="post">
         <div class="main">
 
+                <div class="text">Item Name: </div>
+                <div><input type="text" name="Item_Name" size="30"/></div><br>
 
                 <div class="text">Item ID: </div>
                 <div><input type="text" name="Item_ID" size="30"/></div><br>
