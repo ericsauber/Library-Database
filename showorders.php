@@ -25,29 +25,23 @@
 			// SQL statement
 			$sql = "SELECT Order_Entry_ID,Order_Date,Item_ID,Customer_ID,Payment_ID FROM order_entries";
 			$result = $conn->query($sql);
-
-						 echo '<table cellspacing="0" cellpadding="2" width="90%">';
-
+					 
 			// output data of each row
 			if ($result->num_rows > 0) {
-				 // Output a row
-			        echo "<tr>";
-			        echo '<td align="center"><b>Order ID</b></td><td align="center"><b>Item</b></td><td align="center"><b>Customer ID</b></td><td align="center"><b>Payment ID</b></td><td align="center"><b>Date Ordered</b></td>';
-			        echo "</tr>";
-	    		while($row = $result->fetch_assoc()) {
+                        echo '<table cellspacing="0" cellpadding="2" width="90%">';
+			echo '<tr><th>Order Entry ID</th><th>Date Ordered</th><th>Item ID</th><th>Customer ID</th><th>Payment ID</th><th>Payment Amount</th><th>Payment Method</th><th>Payment Service</th><th>Payment Servicer</th></tr>';
+	    		
+			while($row = $result->fetch_assoc()) {
+	        		echo '<tr><td>'.$row["Order_Entry_ID"].'</td><td>'.$row["Order_Date"].'</td><td>'.$row["Item_ID"].'</td><td>'.$row["Customer_ID"].'</td><td>'.$row["Payment_ID"].'</td><td>'.$row["Payment_Amt"].'</td><td>'.$row["Payment_Type"].'</td><td>'.$row["Srvcr_Type"].'</td><td>'.$row["Srvcr_Name"].'</td><td>';
+			}
 
-	    			 // Output a row
-			        echo "<tr>";
-			        echo '<td align="center">'.$row["Order_Entry_ID"]. '</td><td align="left">' . $row["Item_ID"] . '</td><td align="left">' . $row["Customer_ID"] . '</td><td align="left">' . $row["Payment_ID"] . '</td><td align="left">' . $row["Order_Date"] . '</td>';
-			        echo "</tr>";
-
-	    		}
+			echo "</table>";
 			} else {
 	   			 echo "0 results";
 			}	
 
 			// Close the table
-    		echo "</table>";
+    		
 
 
 			echo "<br>";

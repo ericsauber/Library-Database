@@ -22,6 +22,9 @@
 
                 <div class="text">Item ID: </div>
                 <div><input type="text" name="Item_ID" size="30"/></div><br>
+
+                <div class="text">Item Name: </div>
+                <div><input type="text" name="Item_Name" size="100"/></div><br>
             
                 <div class="text">Type: </div>
                 <div><?php makelistelement('item_types','Type_No','Type',''); ?></div><br>

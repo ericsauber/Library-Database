@@ -58,6 +58,56 @@ a:hover, a:active {
     background-color: rgba(251,63,0);
 }
 
+#nav-menu {
+  margin: auto;
+  text-align: center;
+  background-color:black;
+  width: 212px;
+  opacity:0.8;
+}
+
+#nav-menu ul
+ {list-style-type:none;
+  margin:0px;
+  padding:0px}
+
+#nav-menu ul a
+{text-decoration:none;
+ border:1px solid #303030;
+ width:170px;
+ display:block;
+ text-align:center;
+ font-size:14pt;
+ line-height:2em;
+ border-radius:0px;
+ margin-bottom:0px;
+ background-color:url(Images/Buttons/Button_top.gif) repeat-x left;
+ font-family:Arial, Helvetica, sans-serif;
+ color:white}
+
+#nav-menu ul ul
+{display:none} 
+
+body.blog #nav-menu ul ul.blog, 
+body.web #nav-menu ul ul.web
+{display:block}
+
+#nav-menu ul li{position:relative}
+
+#nav-menu ul li:hover ul
+{display:block;
+ position:absolute;
+ left:214px;
+ top:0px;}
+
+#nav-menu ul ul li a
+{border:1px solid #888888;
+ border-bottom: none;
+ font-size:12pt;
+ line-height: 1.6em;
+ color:#303030;
+ background-color:#a5a5a5;
+ background-image:none;}
 
 
 td{

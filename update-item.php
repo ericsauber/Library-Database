@@ -14,6 +14,7 @@
 
 			$Item_Name = $_POST['Item_Name'];
 			$Item_ID = $_POST['Item_ID'];
+			$Item_Name = $_POST['Item_Name'];
 			$Type_No = $_POST['Type_No'];
 			$Subtype_No = $_POST['Subtype_No'];
 			$Media_No = $_POST['Media_No'];
@@ -42,8 +43,8 @@
 				$today = date("F j, Y, g:ia T"); 
 
 				// SQL statement 
-				$sql = "INSERT INTO items (Item_Name, Item_ID, Type_No, Subtype_No, Media_No, Format_No, Subject_No, Item_Price )
-				VALUES ('" . $Item_Name . "','" . $Item_ID . "','" . $Type_No . "','" . $Subtype_No . "', '". $Media_No ."', '" . $Format_No . "', '" . $Subject_No . "', '" . $Item_Price . "')";
+				$sql = "INSERT INTO items (Item_ID, Item_Name, Type_No, Subtype_No, Media_No, Format_No, Subject_No, Item_Price )
+				VALUES ('" . $Item_ID . "','" . $Item_NAME . "','" . $Type_No . "','" . $Subtype_No . "', '". $Media_No ."', '" . $Format_No . "', '" . $Subject_No . "', '" . $Item_Price . "')";
 
 				echo "Item added<br>";
 
